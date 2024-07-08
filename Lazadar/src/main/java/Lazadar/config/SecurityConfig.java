@@ -35,7 +35,7 @@ public class SecurityConfig {
 		http.csrf(Csrf -> Csrf.disable())
 
 				.authorizeHttpRequests(authorize -> authorize
-						.requestMatchers("/trangchu/**", "/register/**", "/api/**", "/checkout/**", "/login/**")
+						.requestMatchers("/trangchu/**", "/register/**", "/api/search/**", "/checkout/**", "/login/**")
 						.permitAll().anyRequest().authenticated())
 				.formLogin(formLogin -> formLogin.loginPage("/login")
 
@@ -50,8 +50,8 @@ public class SecurityConfig {
 						.logoutSuccessHandler(logoutSuccessHandler())
 //				.invalidateHttpSession(true)
 				).sessionManagement(sessionManage -> sessionManage.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
-//				.authenticationProvider(daoAuthenticationProvider()).securityContext(
-//						security -> security.securityContextRepository(new HttpSessionSecurityContextRepository()))
+				.authenticationProvider(daoAuthenticationProvider()).securityContext(
+						security -> security.securityContextRepository(new HttpSessionSecurityContextRepository()))
 				
 				;
 
