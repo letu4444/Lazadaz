@@ -1,0 +1,54 @@
+package willydekeyser.config.auth;
+
+import java.io.IOException;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
+import org.springframework.security.web.savedrequest.RequestCache;
+import org.springframework.security.web.savedrequest.SavedRequest;
+import org.springframework.stereotype.Component;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+
+
+@Component
+
+public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler{
+	
+
+	private RequestCache requestCache = new HttpSessionRequestCache();
+
+
+	@Override
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+			Authentication authentication) throws IOException, ServletException {
+		String redirectUrl = "http://localhost:8080/index";
+		 System.out.println("Request URL: " + request.getRequestURL());
+			SavedRequest savedRequest = this.requestCache.getRequest(request, response);
+			String targetUrl2 = savedRequest.getRedirectUrl();
+			System.out.println("Saved request URL: " + savedRequest.getRedirectUrl());
+//		authWithHttpServletRequest(request,"user","password");
+		 new DefaultRedirectStrategy().sendRedirect(request, response, redirectUrl);
+		
+	}
+//	public void authWithHttpServletRequest(HttpServletRequest request, String username, String password) {
+//        try {
+//            request.login(username, password);
+//          
+//        } catch (ServletException e) {
+//          System.out.printf("Error while login ", e);
+//        }
+//		 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(username, password);
+//		    authToken.setDetails(new WebAuthenticationDetails(request));
+//		    
+//		    Authentication authentication = authenticationManager.authenticate(authToken);
+//		    
+//		    SecurityContextHolder.getContext().setAuthentication(authentication);
+//    }
+}

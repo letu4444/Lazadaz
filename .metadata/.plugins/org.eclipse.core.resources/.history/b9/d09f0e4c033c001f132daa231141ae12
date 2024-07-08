@@ -1,0 +1,35 @@
+server:
+  port: 8484
+spring:
+  application:
+    name: lazadar-server
+    
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: 4444
+    url: jdbc:sqlserver://localhost:1433;databaseName=springcloud
+    username: sa
+  jpa:
+    hibernate:
+#    create
+      ddl-auto: none
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+  security:
+    user:
+      name: anhtu
+      password: 4444
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 904881811778-hl0sbsl3lklf3ctugr81vq6r6qh6507u.apps.googleusercontent.com
+            client-secret: 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

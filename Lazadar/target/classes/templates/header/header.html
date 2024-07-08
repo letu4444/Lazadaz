@@ -1,0 +1,87 @@
+<meta charset="UTF-8">
+<div th:fragment="header1">
+            <div class="tieude1-1">
+                <div class="tieude1-2"></div>
+                <div class="tieude1-2">
+                   <a class="tieude1-2-1-1" href="#">Tiết kiệm hơn với ứng dụng</a>
+                </div>
+                <div class="tieude1-2">
+                   <a class="tieude1-2-1-1" href="#"> Bán hàng cùng shope</a>
+               </div>
+                <div class="tieude1-2">
+                   <a class="tieude1-2-1-1" href="#">Chăm sóc khách hàng</a>
+                </div>
+                <div class="tieude1-2">
+                      <span class="tieude1-2-1-1">Kiểm tra đơn</span>
+                       <div class="top-popup-wrap order-number">
+                        <div class="top-popup-content lzd-account-content">
+                           
+                            <div class="track-title">Kiểm tra đơn hàng</div>
+                            <form action="" class="track-order-form">
+                                <label for="" class="top-input-label">Vui lòng nhập mã đơn hàng:</label>
+                                <div class="top-input-wrap track-order-input-wrap">
+                                    <input type="text" class="order-text" placeholder="eg.123456789">
+                                    <button class="button-submit" type="submit">
+                                        <i class="icon-arrow-on-button"></i>
+                                    </button>
+                                </div>
+                                <p class="track-order-more-text">Nếu bạn có thắc mắc nào khác, 
+                                    <a href="#" class="" title="Nếu bạn có thắc mắc nào khác">Nhấn vào đây</a>
+                                </p>
+                            </form>
+
+                        </div>
+                       </div>
+                </div>
+                <div sec:authorize="isAnonymous()" class="tieude1-2">
+                  <a class="tieude1-2-1-1" href="http://localhost:8484/login">Đăng nhập</a>
+                </div>
+                <div sec:authorize="isAnonymous()" class="tieude1-2">
+                  <a class="tieude1-2-1-1" href="http://localhost:8484/register">Đăng ký</a>
+               </div>
+               <div sec:authorize="isAuthenticated()" class="tieude1-2">
+                   <span class="tieude1-2-1-1 account"  th:data-userid="${#authentication.principal.credential.id}" th:utext="${#authentication.principal.credential.username}+ Account">Tên</span>
+                    <div class="user_account top-popup-wrap">
+                        <div class="top-popup-content lzd-account-content">
+                            <ul class="account-list">
+                                <li class="account-item">
+                                 <a href="http://localhost:8484/member.user" class="account-item-anchor">
+                                          <span class="account-icon test manage-account"></span>Manage My Account
+                                      </a>
+                                </li>
+                                <li class="account-item">
+                                  <a href="http://localhost:8484/order/views" class="account-item-anchor">
+                                          <span class="account-icon test my-orders"></span>My Orders
+                                      </a>
+                                </li>
+                                <li class="account-item">
+                                   <a href="//my.lazada.vn/wishlist/index" class="account-item-anchor">
+                                          <span class="account-icon test wishlist"></span>My Wishlist &amp; Followed Stores
+                                      </a>
+                                </li>
+                                <li class="account-item">
+                                   <a href="//my.lazada.vn/customer/myReview/my-reviews" class="account-item-anchor">
+                                          <span class="account-icon test my-reviews"></span>My Reviews
+                                      </a>
+                                </li>
+                                <li class="account-item">
+                                    <a href="//my.lazada.vn/customer/returns/index?requestType=return" class="account-item-anchor">
+                                          <span class="account-icon test returns"></span>My Returns &amp; Cancellations
+                                      </a>
+                                </li>
+                                <li class="account-item">
+                                  <a href="/perform_logout" class="account-item-anchor" id="account-popup-logout">
+                                          <span class="account-icon test logout"></span>Logout
+                                      </a>
+                                </li>
+                            </ul>
+                      
+                        </div>
+                    </div>
+               </div>
+                <div class="tieude1-2">
+                  <a class="tieude1-2-1-1" href="#">Ngôn ngữ</a>
+                  
+                </div>
+            </div>
+</div>

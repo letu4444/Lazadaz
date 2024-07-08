@@ -1,0 +1,28 @@
+package Lazadar.uitl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import Lazadar.enumRole.UserRole;
+import Lazadar.model.Role;
+import Lazadar.repository.RoleRepository;
+
+@Component
+public class RoleInitializer implements CommandLineRunner {
+
+    private final RoleRepository roleRepository;
+
+    @Autowired
+    public RoleInitializer(RoleRepository roleRepository) {
+        this.roleRepository = roleRepository;
+    }
+
+    @Override
+    public void run(String... args) {
+        // Tạo các bản ghi cho vai trò (role)
+        roleRepository.save(new Role(UserRole.ADMIN));
+        roleRepository.save(new Role(UserRole.USER));
+        roleRepository.save(new Role(UserRole.MANAGER));
+    }
+}

@@ -1,0 +1,17 @@
+package Lazadar.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import Lazadar.enumRole.UserRole;
+import Lazadar.model.Role;
+
+
+
+
+
+
+public interface RoleRepository extends JpaRepository<Role, Long>{
+
+	Role findByName(UserRole name);
+	Role findByCode(UserRole user);
+}

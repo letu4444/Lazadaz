@@ -1,0 +1,36 @@
+server:
+  port: 8484
+spring:
+  application:
+    name: lazadar-server
+    
+  datasource:
+    driverClassName: //ten class
+    password: //mk
+    url: //duong dan sql
+    username: //ten sql
+  jpa:
+    hibernate:
+#    create
+      ddl-auto: none
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+  security:
+    user:
+      name: anhtu
+      password: 4444
+      
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: //dien dia chi id trong gg
+            client-secret: //dien client-secret trong gg

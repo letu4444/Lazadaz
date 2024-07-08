@@ -1,0 +1,5 @@
+package Lazadar.config.authori;
+
+public class CustomLogoutSuccessHandler {
+
+}

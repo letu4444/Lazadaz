@@ -1,0 +1,3 @@
+server.port= 8484
+
+spring.application.name= lazadar-server

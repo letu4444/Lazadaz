@@ -1,0 +1,274 @@
+package willydekeyser.config;
+
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.Collection;
+import java.util.Set;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.http.MediaType;
+import static org.springframework.security.config.Customizer.withDefaults;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.jose.jws.JwsAlgorithm;
+import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
+import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
+import org.springframework.security.oauth2.jwt.JoseHeaderNames;
+import org.springframework.security.oauth2.jwt.JwsHeader;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.jwt.JwtClaimsSet;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.JwtEncoder;
+import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import org.springframework.security.oauth2.jwt.JwtEncodingException;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
+import org.springframework.security.oauth2.server.authorization.OAuth2TokenType;
+import org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration;
+import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
+import org.springframework.security.oauth2.server.authorization.settings.AuthorizationServerSettings;
+import org.springframework.security.oauth2.server.authorization.token.DelegatingOAuth2TokenGenerator;
+import org.springframework.security.oauth2.server.authorization.token.JwtEncodingContext;
+import org.springframework.security.oauth2.server.authorization.token.OAuth2AccessTokenGenerator;
+import org.springframework.security.oauth2.server.authorization.token.OAuth2RefreshTokenGenerator;
+import org.springframework.security.oauth2.server.authorization.token.OAuth2TokenCustomizer;
+import org.springframework.security.oauth2.server.authorization.token.OAuth2TokenGenerator;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
+import org.springframework.security.web.savedrequest.RequestCache;
+import org.springframework.security.web.util.matcher.MediaTypeRequestMatcher;
+import org.springframework.web.cors.CorsConfigurationSource;
+
+import com.nimbusds.jose.JWSAlgorithm;
+import com.nimbusds.jose.JWSHeader;
+import com.nimbusds.jose.jwk.JWK;
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.OctetSequenceKey;
+import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
+import com.nimbusds.jose.jwk.source.JWKSource;
+import com.nimbusds.jose.proc.SecurityContext;
+
+
+import willydekeyser.config.auth.CustomOauth2UserServer;
+import willydekeyser.config.auth.OAuth2LoginSuccessHandler;
+import willydekeyser.service.CustomUserDetailsService;
+import willydekeyser.service.TokenService;
+
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+		
+	//chữ ký
+	@Value("${jwt.signerKey}")
+	private String signerKey;
+	
+	@Bean 
+	@Order(1)
+	SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http,
+			CorsConfigurationSource corsConfigurationSource)
+			throws Exception {
+		OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
+		http.getConfigurer(OAuth2AuthorizationServerConfigurer.class)
+			.oidc(withDefaults());
+		http.exceptionHandling((exceptions) -> exceptions.defaultAuthenticationEntryPointFor(
+                new LoginUrlAuthenticationEntryPoint("/login"), new MediaTypeRequestMatcher(MediaType.TEXT_HTML)))
+//        .oauth2ResourceServer((resourceServer) -> resourceServer.jwt(jwtSpec -> {
+//            jwtSpec.decoder(jwtDecoder());
+//        }))
+        ;
+
+        http.cors(customizer -> customizer.configurationSource(corsConfigurationSource));
+
+		return http.build();
+	}
+
+	@Bean 
+	@Order(2)
+	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
+			throws Exception {
+		http
+           .csrf(Csrf -> Csrf.disable())
+			.authorizeHttpRequests((authorize) -> authorize
+				.requestMatchers("/error","/oauth2/**").permitAll()
+				.requestMatchers("/register/**").permitAll()
+				.anyRequest().authenticated())
+			.formLogin(formLogin -> formLogin
+				.loginPage("/login")
+				.successHandler(savedRequestAwareAuthenticationSuccessHandler())
+				.permitAll()
+		    
+		)
+        .oauth2Login(oauth2Login ->
+        oauth2Login
+        .loginPage("/login")
+        .userInfoEndpoint(userInfo -> userInfo
+		        .oidcUserService(this.customOauth2UserServer))
+		        .successHandler(savedRequestAwareAuthenticationSuccessHandler()))
+ 			
+//		.oauth2ResourceServer(oauth2 -> oauth2
+//                .jwt(jwt -> jwt.decoder(jwtDecoder())))
+        .sessionManagement(sessionManage ->
+        sessionManage.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
+       .authenticationProvider(daoAuthenticationProvider())
+		;
+		return http.build();
+	}
+//	@Bean
+//	JwtDecoder jwtDecoder() {
+//		SecretKeySpec secretKeySpec = new SecretKeySpec(signerKey.getBytes(), "HS256");
+//		return NimbusJwtDecoder.withSecretKey(secretKeySpec)
+//				.macAlgorithm(MacAlgorithm.HS256)
+//				.build();
+//	}
+
+
+    private KeyPair generateRsaKey() throws Exception {
+		KeyPair keyPair;
+		try {
+			KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+			keyPairGenerator.initialize(2048);
+			keyPair = keyPairGenerator.generateKeyPair();
+		} catch (Exception ex) {
+//			throw new
+			throw new Exception(ex);
+		}
+		return keyPair;
+	}
+//Điểm cuối JWK Set chỉ được định cấu hình nếu a
+//giúp bạn quản lý khóa bảo mật (public keys và private keys) sử dụng trong quá trình xác thực JWT.
+	@Bean
+	public JWKSource<SecurityContext> jwkSource() throws Exception {
+		KeyPair keyPair = generateRsaKey();
+//	Lấy khóa công khai và khóa bí mật từ cặp khóa
+//	Từ cặp khóa được tạo, ta lấy ra khóa công khai (RSAPublicKey) 
+//	và khóa bí mật (RSAPrivateKey).
+		RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
+		RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
+//	Xây dựng một đối tượng JWK từ khóa RSA
+//	Sử dụng RSAKey.Builder, ta xây dựng một đối tượng RSAKey từ khóa công khai 
+//	và khóa bí mật. 
+//	Cũng đặt một keyID (ID của khóa) bằng cách sử dụng một UUID ngẫu nhiên
+		RSAKey rsaKey = new RSAKey.Builder(publicKey).privateKey(privateKey).keyID(UUID.randomUUID().toString())
+				.build();
+//	Xây dựng một đối tượng JWKSet từ RSAKey
+//	Sau đó, ta sử dụng JWKSet để chứa RSAKey, tạo thành một tập hợp các JSON Web Keys.
+		JWKSet jwkSet = new JWKSet(rsaKey);
+//	Trả về một ImmutableJWKSet
+//	ImmutableJWKSet có thể là một biến thể không thể thay đổi của JWKSet, 
+//	giữ cho các khóa được trả về không thể thay đổi sau khi đã được khởi tạo
+		return new ImmutableJWKSet<>(jwkSet);
+	}
+
+
+
+
+	@Bean
+    public JwtEncoder jwtEncoder(JWKSource<SecurityContext> jwkSource) {
+        return new NimbusJwtEncoder(jwkSource);
+    }
+
+ 
+
+//Điểm cuối OpenID Connect 1.0 UserInfo là tài nguyên được bảo vệ OAuth2
+//JwtDecoder là một giao diện giúp giải mã JWT
+	@Bean
+	JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
+		return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource);
+	}
+    
+// sử dụng để đặt cấu hình cho máy chủ ủy quyền (Authorization Server)
+	@Bean
+	AuthorizationServerSettings authorizationServerSettings() {
+		return AuthorizationServerSettings.builder().build();
+	}
+
+	@Bean
+    WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.debug(false)
+                .ignoring()
+                .requestMatchers("/webjars/**", "/images/**", "/css/**", "/js/**", "/favicon.ico");
+    }
+	
+//	@Bean
+//	public UserDetailsService userDetailsService() {
+//		return new CustomUserDetailsService();
+//	}
+	@Autowired
+	private CustomUserDetailsService userDetailsService;
+	@Autowired
+	private PasswordConfig passwordConfig;
+    @Bean
+    public DaoAuthenticationProvider daoAuthenticationProvider() {
+        DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
+        auth.setUserDetailsService(userDetailsService);
+        auth.setPasswordEncoder(passwordConfig.passwordEncoder());
+        return auth;
+    }
+	@Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+		return configuration.getAuthenticationManager();
+	}
+	 @Autowired
+	 public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+	        auth.userDetailsService(userDetailsService).passwordEncoder(passwordConfig.passwordEncoder());
+	    }
+//	@Bean
+//	AuthenticationSuccessHandler thực hiện các tác vụ khác sau khi người dùng đăng nhập thành công
+//	AuthenticationSuccessHandler authenticationSuccessHandler() {
+//	SavedRequestAwareAuthenticationSuccessHandler để chuyển hướng người dùng đến trang mà họ đã cố gắng truy cập trước khi đăng nhập
+//		return new SavedRequestAwareAuthenticationSuccessHandler();
+//	}
+	
+    @Bean
+    public SavedRequestAwareAuthenticationSuccessHandler savedRequestAwareAuthenticationSuccessHandler() {
+        SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
+        successHandler.setDefaultTargetUrl("http://localhost:8080/hello"); // URL mặc định nếu không có yêu cầu ban đầu được lưu
+        return successHandler;
+    }
+
+    @Bean
+    public RequestCache requestCache() {
+//    	HttpSessionRequestCache để lưu trữ yêu cầu ban đầu
+        return new HttpSessionRequestCache();
+    }
+	
+	@Autowired
+	private CustomOauth2UserServer customOauth2UserServer;
+	@Autowired
+	private OAuth2LoginSuccessHandler succsessHandler;
+}

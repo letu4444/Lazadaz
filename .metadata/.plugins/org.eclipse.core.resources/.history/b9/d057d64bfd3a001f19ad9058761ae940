@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org",
+       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <script src="https://kit.fontawesome.com/17cfc9faeb.js" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"> -->
+</head>
+<body>
+    <div class="tieude">
+        <div class="tieude1">
+            <div th:replace="header/header :: header1"></div>
+            <div class="tieude1-3">
+                <div class="tieude1-7">
+                    <div class="tieude1-4">
+                        <a href="#" class="tieude1-4-1">
+                            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1T7K2d8Cw3KVjSZFuXXcAOpXa.png" alt="">
+                        </a>
+                    </div>
+                    <div class="tieude1-5">
+                        <form class="tieude1-5-1">
+                            <div class="tieude1-5-2">
+                                <input type="text" class="tieude1-5-4"  placeholder="Tìm kiếm...">
+                                <button class="tieude1-5-3">
+                                    <i class="fa fa-search" style="color: aliceblue;" aria-hidden="true"></i>                            </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tieude1-6">
+                        <a href="#" class="tieude1-6-1">
+                            <span class="tieude1-6-2"></span>
+                            <span class="cart">1</span>
+                        </a>
+                    </div>
+                    <div class="tieude1-7-1">
+                        <a href="#" class="tieude1-7-2">
+                            <img src="https://icms-image.slatic.net/images/ims-web/32e6670c-9521-4958-bff6-2ff4dc6275b4.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tieude2">
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/816b5aaf-ddd5-47e3-a2f9-fa8b86f08670.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/d823dc3e-8523-4c61-a860-18e56383bc25.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/2f0556ed-d189-400d-a020-7bc2523836ba.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/176669d6-3e36-4789-b07b-26bfe74e7fc3.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/95f830b7-a10e-4e07-a722-3ed63102f0d9.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/b9f6f896-5a37-4832-b58e-87df4d3bfc22.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/816b5aaf-ddd5-47e3-a2f9-fa8b86f08670.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/40b23bfd-ba1c-4576-86c2-161f72c7ac55.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/6a3e25c2-f27d-43ae-a60e-d91af24a6e04.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/7af5d3b4-ede1-4029-8760-46646cefb051.jpg_2200x2200q90.jpg_.webp" alt="">
+            </div>
+            <div class="tieude2-1 amine">
+                <img src="https://icms-image.slatic.net/images/ims-web/dd6b8025-f99c-4798-a40f-0d6de56ab22f.jpg" alt="">
+            </div>
+            <div class="tieude2-2">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="tieude2-6">
+                <ul class="tieude2-3">
+                    <li class="tieude2-4" id="leve1_01">
+                        <span class="tieude2-5">Thiết bị điện tử</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_02">
+                        <span class="tieude2-5">Phụ tùng điện tử</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_03">
+                        <span class="tieude2-5">Tv & thiết bị điện gia dụng</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_04">
+                        <span class="tieude2-5">Sức khỏe & làm đẹp</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_05">
+                        <span class="tieude2-5">Hàng men, bé & đồ chơi</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_06">
+                        <span class="tieude2-5">Siêu thị tạp hóa</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_07">
+                        <span class="tieude2-5">Hàng gia dụng & đời sống</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_08">
+                        <span class="tieude2-5">Thời trang & phụ kiện nữ</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_09">
+                        <span class="tieude2-5">Thời trang & phụ kiện nam</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_010">
+                        <span class="tieude2-5">Thời trang & phụ kiện trẻ</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_011">
+                        <span class="tieude2-5">Thể thao & du lịch</span>
+                    </li>
+                    <li class="tieude2-4" id="leve1_012">
+                        <span class="tieude2-5">Ô tô & xe máy </span>
+                    </li>
+                    <ul class="tieude2-9 leve1_01">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Điện thoại di động</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Máy tính bảng</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Laptop</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Máy tính để bàn</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Âm thanh</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Camera giám sát</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Máy ảnh kĩ thuật số</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Máy quay phim & Máy quay hành động</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Màn hình tivi</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Máy in</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồng hồ thông minh</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Máy chơi game</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_02">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện di động</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thiết bị thông minh</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thiết bị số</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện máy ảnh</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện máy ảnh camera</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thiết bij lưu trữu</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện máy tính</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Linh kiện máy tính</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện ống kính</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thiết bị mạng</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện máy chơi game</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8"></span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_03">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Tivi & Videos</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Điện gia dụng nhỏ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Điện gia dụng lớn</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện Tivi</span>
+                        </li>
+
+                    </ul>
+                    <ul class="tieude2-9 leve1_04">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Chăm sóc da</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Trang điểm</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Dụng cụ làm đẹp</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Chăm sóc cơ thể</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Chăm sóc tóc</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Chăm sóc cá nhân</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Danh cho nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thực phẩm chức năng</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Nước hoa</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thực phẩm cho sắc đẹp</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Sức khỏe tình dục</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thiết bị y tế</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_05">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Tã bỉm & dụng cụ vệ sinh</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Sữa bột & thức ăn cho bé</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thời trang cho bé</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ ăn dặm & Bú sữa</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Xe, ghế & đai địu</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ dùng phòng ngủ cho bé</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Tắm gội& chăm sóc cơ thể</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ chơi cho bé</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ chơi điện tử & thiết bị điện tử</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ chơi thể thao & ngoài trời</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ chơi cho bé tập chững</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ chơi giáo dục</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_06">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Sưac tiệt trùng & sữa bột</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đò uống , bia & rượu</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thực phẩm từ sữa & đông lạnh</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ hộp,Thực phẩm đóng gói</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Nguyện liệu nấu ăn & làm bánh</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Giấy & vệ sinh nhà cửa</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Lau chùi vệ sinh nhà bếp</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ dùng giặt giũ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện thú cưng</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thức ăn & đồ dùng thú cưng</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Sản phẩm tươi sống</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Kẹo ,Socola & đồ ăn vặt</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_07">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Bếp & phòng ăn</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Sửa chữa nhà cửa</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Dụng cụ điện</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Dụng cụ cầm tay</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phòng ngủ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phòng tắm</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đèn thiết bị đèn</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">trang trí nhà cửa</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ nội thất</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">văn phìng phẩm & đồ thủ công</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">sách & nhạc cụ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Đồ giặt & đồ làm sạch</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_08">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thời trang nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồ ngủ & nội y</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">túi xách</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">trang sức nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồng hồ nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">gọng kính nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">kính mát nữ</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_09">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Thời trang nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồ lót nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Phụ kiện nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">túi xách</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">trang sức nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồng hồ nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">gọng kính nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">kính mát nam</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_010">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">trang phục bé trai</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày bé trai</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">trang phục bé gáigái</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày bé gái</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">túi xách trẻ em</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồng hồ trẻ em</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">kính mắt</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">quần áo thể thao bé nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">quần áo thể thao bé nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày dép thể thao bé nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày dép thể thao bé nữ</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_011">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày thể thao nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Trang phục nam</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">giày thể thao nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Trang phục nữ</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">vali & túi du lịch</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồ dã ngoại</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">thể thao & thể hình</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">thể thao dùng vợt</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">thể thao đồng đội</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đấm bốc & võ thuật</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">thể thao dưới nước</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">phụ kiện thể thao</span>
+                        </li>
+                    </ul>
+                    <ul class="tieude2-9 leve1_012">
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">xe máy</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">chăm sóc ô tô</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">trang trí nội thất ô tô</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">trang trí ngoại thất ô tô</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">phụ tùng & phụ kiện ô tô</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồ điện tử dành cho ô tô</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">dầu nhớt & phụ gia ô tô</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">phụ tùng xe máy</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">đồ bảo hộ khi đi xe máy</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">phụ kiện & đồ chơi xe</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">dầu nhớt & phụ gia xe máy</span>
+                        </li>
+                        <li class="tieude2-7">
+                            <span class="tieude2-8">Vỏ ruột bánh xe máy & Mâm xe</span>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="tieude3">
+            <div class="tieude3-1">
+                <div class="tieude3-2">
+                    <a href="#" class="tieude3-3">
+                        <div class="tieude3-4">
+                            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB15wgLWBr0gK0jSZFnXXbRRXXa.png" alt="">
+                        </div>
+                        <div class="tieude3-5">lazada mail</div>
+                    </a>
+                </div>
+                <div class="tieude3-2">
+                    <a href="#" class="tieude3-3">
+                        <div class="tieude3-4">
+                            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1UiNthUT1gK0jSZFhXXaAtVXa.png" alt="">
+                        </div>
+                        <div class="tieude3-5">mã giảm giá</div>
+                    </a>
+                </div>
+                <div class="tieude3-2">
+                    <a href="#" class="tieude3-3">
+                        <div class="tieude3-4">
+                            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1DahvhO_1gK0jSZFqXXcpaXXa.png" alt="">
+                        </div>
+                        <div class="tieude3-5">nạp thẻ & voucher</div>
+                    </a>
+                </div>
+                <div class="tieude3-2">
+                    <a href="#" class="tieude3-3">
+                        <div class="tieude3-4">
+                            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1CDWbBYj1gK0jSZFuXXcrHpXa.png" alt="">
+                        </div>
+                        <div class="tieude3-5">lazaGlobal</div>
+                    </a>
+                </div>
+            </div>
+            <div class="tieude3-6">
+                <h1 class="tieude3-6-1">Deal chớp nhoáng</h1>
+                <div class="tieude3-6-2">
+                    <div class="tieude3-6-8">
+                        <div class="tieude3-6-3">
+                            <div class="tieude3-6-4">Đang bán</div>
+                            <div class="tieude3-6-5">
+                                <span class="tieude3-6-6">Kết thúc trong</span>
+    
+                            </div>
+                        </div>
+                        <button class="tieude3-6-7">mua sắm toàn bộ sản phẩm</button>
+    
+                    </div>
+                    <div class="tieude3-7">
+                        <a href="#" class="tieude3-7-1">
+                            <div class="tieude3-7-2">
+                                <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/799f4fc50d1c76ce8c1d70e3a15c58ed.jpg_400x400q80.jpg_.webp" alt="Kmoist Máy Thổi Bong Bóng Tự Động Lớn Cho Trẻ Em, Súng Bắn Bong Bóng Mô Phỏng Máy Phóng Gatling Chạy Điện Sạc 69/64 Lỗ, Đồ Chơi Ngoài Trời Mùa Hè, Quà Tặng Bé Trai Bé Gái, Gói Xà Phòng Siêu Bong Bóng">
+                            </div>
+                            <div class="tieude3-7-3">
+                                <div class="tieude3-7-4"> </div>
+                                <div class="tieude3-7-5">
+                                    <span class="tieude3-7-7">5000</span>
+                                    <span class="tieude3-7-8"> ₫</span>
+                                </div>
+                                <div class="tieude3-7-6">
+                                    <span class="tieude3-7-9">
+                                        <span class="tieude3-7-7">50.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </span>
+                                    <span class="tieude3-7-0">-89%</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="tieude3-7-1">
+                            <div class="tieude3-7-2">
+                                <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/42b548ab4e6525c20809bdbc8c964255.jpg_400x400q80.jpg_.webp" alt="sét áo kiểu undefined chân váy dài siêu xinh">
+                            </div>
+                            <div class="tieude3-7-3">
+                                <div class="tieude3-7-4"> </div>
+                                <div class="tieude3-7-5">
+                                    <span class="tieude3-7-7">99000</span>
+                                    <span class="tieude3-7-8"> ₫</span>
+                                </div>
+                                <div class="tieude3-7-6">
+                                    <span class="tieude3-7-9">
+                                        <span class="tieude3-7-7">225.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </span>
+                                    <span class="tieude3-7-0">-56%</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="tieude3-7-1">
+                            <div class="tieude3-7-2">
+                                <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/1ca9e53691f44af9c59eeaefdf0370cb.png_400x400q80.jpg_.webp" alt="Độc quyền Lazada - Điện thoại TECNO Spark 8C 64/2GB - Pin 5000mAH">
+                            </div>
+                            <div class="tieude3-7-3">
+                                <div class="tieude3-7-4"> </div>
+                                <div class="tieude3-7-5">
+                                    <span class="tieude3-7-7">1990000</span>
+                                    <span class="tieude3-7-8"> ₫</span>
+                                </div>
+                                <div class="tieude3-7-6">
+                                    <span class="tieude3-7-9">
+                                        <span class="tieude3-7-7">2.490.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </span>
+                                    <span class="tieude3-7-0">-20%</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="tieude3-7-1">
+                            <div class="tieude3-7-2">
+                                <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/78a84a816c858d32832d840895fe5335.jpg_400x400q80.jpg_.webp" alt="Đồ Bộ Ngắn Phối Tầng Vải Phi Bóng Mềm Mịn, Freesize Dưới 57kg Nguyên Khánh Store">
+                            </div>
+                            <div class="tieude3-7-3">
+                                <div class="tieude3-7-4"> </div>
+                                <div class="tieude3-7-5">
+                                    <span class="tieude3-7-7">35000</span>
+                                    <span class="tieude3-7-8"> ₫</span>
+                                </div>
+                                <div class="tieude3-7-6">
+                                    <span class="tieude3-7-9">
+                                        <span class="tieude3-7-7">75.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </span>
+                                    <span class="tieude3-7-0">-53%</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="tieude3-7-1">
+                            <div class="tieude3-7-2">
+                                <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/f7838776ad90d6ebc7ae9a75a29fa8c5.png_400x400q80.jpg_.webp" alt="[FREE SHIP + VOUCHER 20K] Balo Japan Classic Season 4 Balo Nam Nữ Đi Học Thời Trang Đựng Laptop Unisex Du lịch chống nước Chính Hãng Local Brand Midori Studio">
+                            </div>
+                            <div class="tieude3-7-3">
+                                <div class="tieude3-7-4"> </div>
+                                <div class="tieude3-7-5">
+                                    <span class="tieude3-7-7">6300</span>
+                                    <span class="tieude3-7-8"> ₫</span>
+                                </div>
+                                <div class="tieude3-7-6">
+                                    <span class="tieude3-7-9">
+                                        <span class="tieude3-7-7">600.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </span>
+                                    <span class="tieude3-7-0">-99%</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="tieude3-7-1">
+                            <div class="tieude3-7-2">
+                                <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/783af860b9702c06813f2a6c8e389157.jpg_400x400q80.jpg_.webp" alt="Đầm Dáng Suông Nữ Bo Thun Ngực Đầm Váy Maxi Nữ Đi Du Lịch Đi Biển Có Nhiều Màu">
+                            </div>
+                            <div class="tieude3-7-3">
+                                <div class="tieude3-7-4"> </div>
+                                <div class="tieude3-7-5">
+                                    <span class="tieude3-7-7">76000</span>
+                                    <span class="tieude3-7-8"> ₫</span>
+                                </div>
+                                <div class="tieude3-7-6">
+                                    <span class="tieude3-7-9">
+                                        <span class="tieude3-7-7">123.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </span>
+                                    <span class="tieude3-7-0">-51%</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tieude4">
+                <div class="tieude4-1">
+                    <div class="tieude4-1-1">Bộ sưu tầm</div>
+                    <div class="tieude4-1-3">
+                           <a href="#" class="tieude4-1-4">
+                            <button class="tieude4-1-2">Xem thêm </button>
+                             <span class="tieude4-1-5">❯</span>
+                           </a>
+                    </div>
+                </div>
+                <div class="tieude4-2">
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">11.11 Súc khỏe & làm đẹp ></div>
+                              <div class="tieude4-2-3">524 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/7c81cf33e66ba90ab3785225c3a613be.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/43e866da09de12bf7e06428d8a93ce7b.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/live/vn/p/8a30120e56e4ee7087ac5db03b8e0ab3.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">Ưu đãi cho chàng ></div>
+                              <div class="tieude4-2-3">9.235 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/9b57d11ac14ba3437e51662a94db35fc.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/e14c5e89616120e7ad30f28c5943e5fe.png_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/18c3c46cab08ac525a6185e18029f84f.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">Thắp sáng nhà bạn ></div>
+                              <div class="tieude4-2-3">335 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/d7ba41768ca5232e67cf90c181bb3a9e.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/3d2a24cba9ca498d471971207033a05c.png_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/cd21ae306a09b15faa54688d84c381ce.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">Phụ kiện 5 sao ></div>
+                              <div class="tieude4-2-3">12.535 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/f25e38121c4f309d26b8c1776f30e7f0.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/8b6ac0dd5ffb6a87539d94c8e197f9b4.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/a648458c8467dc1cc54c9ad73507893e.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">Chill ở nhà ></div>
+                              <div class="tieude4-2-3">16.005 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                    <img src="https://lzd-img-global.slatic.net/g/p/cede38b0a2aceb587b0683b978ea6c46.jpg_150x150q80.jpg_.webp" alt="">
+                                </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/live/vn/p/5c8b0e9bb5d6ae9001d51ad5ae24e3fe.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/dcd227265db726914bdbf60e3c4968d9.png_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">Túi nam ></div>
+                              <div class="tieude4-2-3">335 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/0d9670ffb5ab490e256cb02988f54ca4.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/429c96d73301c7d2e93afca8b41a46a8.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/28ac668ea9f348e7251492e1e9efd74c.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">Thời trang của mẹ ></div>
+                              <div class="tieude4-2-3">1.045 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/921d9c95a3b7e5de7eb9fd5a93d3c2d9.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/f0878b115b6858fc770e6986fbba720e.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/ff8ade6b5d13e23033796f7fb6d9a304.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="tieude4-2-1">
+                          <a href="#" class="tieude4-2-6">
+                              <div class="tieude4-2-2">Mới |Mua sắm online ></div>
+                              <div class="tieude4-2-3">905 Sản phẩm</div>
+                              <div class="tieude4-2-4">
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/5ef90552ead763c83efa606774a90ca8.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/ff/kf/Seef7a72a952641c592b202daf629d3d1b.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                                  <div class="tieude4-2-5">
+                                      <img src="https://lzd-img-global.slatic.net/g/p/2ae0ea6092ef7a3e13bd5dac25d89bd1.jpg_150x150q80.jpg_.webp" alt="">
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                </div>
+            </div>
+            <div class="tieude4-3">
+                <span class="tieude4-3-1">Danh mục ngành hàng</span>
+                <div class="tieude4-3-2">
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/bafba96f375c654a2e3221c43d7a0988.jpg_170x170q80.jpg_.webp" alt="Tai nghe nhét tai không dây">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/5a54206f0e79e99d08bcffea15603e26.jpg_170x170q80.jpg_.webp" alt="Ba lô nữ">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/4291c8ebf40f274ddea483f9a595051a.jpg_170x170q80.jpg_.webp" alt="Áo thun nam">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/a0e8b030bab5899a948d966f8b23cc7e.jpg_170x170q80.jpg_.webp" alt="Điện thoại di động">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/live/vn/p/724e5907fbc41d948e70626b6ef8b8e6.jpg_170x170q80.jpg_.webp" alt="Đầm">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/e4a0bb964bd29d9cd8576697d6e53aa1.jpg_170x170q80.jpg_.webp" alt="Loa không dây & loa Bluetooth">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/db1cb2f12a0646c846e273fe1ac510cc.jpg_170x170q80.jpg_.webp" alt="Pin sạc dự phòng">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/00ba84d0bdb3a1f33372fbb7c8819a46.jpg_170x170q80.jpg_.webp" alt="Nước hoa Nữ">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/e7dbf5b658ad81277334ca1657d9f192.png_170x170q80.jpg_.webp" alt="Cáp & Dock sạc">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/live/vn/p/a255fc562517e5e5e957919c54cf3c75.jpg_170x170q80.jpg_.webp" alt="Áo thun nữ">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/ae7aed502f2abde130de8e18cc7adb73.jpg_170x170q80.jpg_.webp" alt="Máy hút bụi tự động">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/79731667c867506bfd84f1d4bc760681.jpg_170x170q80.jpg_.webp" alt="Áo thun có cổ nam">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/b61bb74505c4e625f492c361830f23a1.jpg_170x170q80.jpg_.webp" alt="Đồng hồ thông minh">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/e9696bb9237429d5374f8a492b7f9bfd.jpg_170x170q80.jpg_.webp" alt="Dầu gội">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/ea9769bbb12eab576dd4b46a48f89f91.jpg_170x170q80.jpg_.webp" alt="Túi đeo chéo & Túi đeo vai nữ">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                    <div class="tieude4-3-3">
+                        <a href="#" class="tieude4-3-4">
+                            <div class="tieude4-3-5">
+                                <img class="tieude4-3-7" src="https://lzd-img-global.slatic.net/g/p/10a2ead49b2a8ec0caee0f357e5e02df.jpg_170x170q80.jpg_.webp" alt="Bộ quần áo bé gái">
+                            </div>
+                            <div class="tieude4-3-6"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tieude4-4">
+                <div class="tieude4-1">
+                    <div class="tieude4-1-1">Lazada Mail</div>
+                    <div class="tieude4-1-3">
+                           <a href="#" class="tieude4-1-4">
+                            <button class="tieude4-1-2">Xem thêm </button>
+                             <span class="tieude4-1-5">❯</span>
+                           </a>
+                    </div>
+                </div>
+                <div class="tieude4-4-1">
+                      <div class="tieude4-4-2">
+                          <a href="#" class="tieude4-4-3">
+                              <div class="tieude4-4-4">
+                                  <img src="https://lzd-img-global.slatic.net/g/p/212af605e5a9c60819d5577aa9cfb65b.jpg_400x400q80.jpg_.webp" alt="">
+                                   <div class="tieude4-4-9"></div> 
+                                </div>
+                              <div class="tieude4-4-5">
+                                  <img class="tieude4-4-8" src="https://lzd-img-global.slatic.net/g/ot/shop/97deddfe97bd4df9bdcb7c487908d56b.jpg_120x120q80.jpg_.webp" alt="MIDORI STUDIO MDR">
+                              </div>
+                              <div class="tieude4-4-6"></div>
+                              <p class="tieude4-4-7"></p>
+                          </a>
+                      </div>
+                      <div class="tieude4-4-2">
+                          <a href="#" class="tieude4-4-3">
+                              <div class="tieude4-4-4">
+                                  <img src="https://lzd-img-global.slatic.net/g/p/c2d194083d4452f5fea571d0ae7280fb.jpg_400x400q80.jpg_.webp" alt="">
+                                   <div class="tieude4-4-9"></div> 
+                                </div>
+                              <div class="tieude4-4-5">
+                                  <img class="tieude4-4-8" src="https://lzd-img-global.slatic.net/g/shop/f68e93ec7ed4a4b03834596cdec9c568.jpeg_120x120q80.jpg_.webp" alt="La Roche-Posay">
+                              </div>
+                              <div class="tieude4-4-6"></div>
+                              <p class="tieude4-4-7"></p>
+                          </a>
+                      </div>
+                      <div class="tieude4-4-2">
+                          <a href="#" class="tieude4-4-3">
+                              <div class="tieude4-4-4">
+                                  <img src="https://lzd-img-global.slatic.net/g/p/d37b07ce8f85bc16a21202d2a2a2434e.jpg_400x400q80.jpg_.webp" alt="">
+                                   <div class="tieude4-4-9"></div> 
+                                </div>
+                              <div class="tieude4-4-5">
+                                  <img class="tieude4-4-8" src="https://lzd-img-global.slatic.net/g/shop/8fcf5b592f9769267ed2e33a4fdc0f76.jpeg_120x120q80.jpg_.webp" alt="Prota">
+                              </div>
+                              <div class="tieude4-4-6"></div>
+                              <p class="tieude4-4-7"></p>
+                          </a>
+                      </div>
+                      <div class="tieude4-4-2">
+                          <a href="#" class="tieude4-4-3">
+                              <div class="tieude4-4-4">
+                                  <img src="https://lzd-img-global.slatic.net/g/p/43024d7cf3d6a6bd5bea93642b190df8.png_400x400q80.jpg_.webp" alt="">
+                                   <div class="tieude4-4-9"></div> 
+                                </div>
+                              <div class="tieude4-4-5">
+                                  <img class="tieude4-4-8" src="https://lzd-img-global.slatic.net/g/shop/f955bfaff0f52ed6f040df42d341d379.jpeg_120x120q80.jpg_.webp" alt="THEGIOINEM.COM">
+                              </div>
+                              <div class="tieude4-4-6"></div>
+                              <p class="tieude4-4-7"></p>
+                          </a>
+                      </div>
+                      <div class="tieude4-4-2">
+                          <a href="#" class="tieude4-4-3">
+                              <div class="tieude4-4-4">
+                                  <img src="https://lzd-img-global.slatic.net/g/p/44c417a066773c9959dda15971ceeb9e.jpg_400x400q80.jpg_.webp" alt="">
+                                   <div class="tieude4-4-9"></div> 
+                                </div>
+                              <div class="tieude4-4-5">
+                                  <img class="tieude4-4-8" src="https://lzd-img-global.slatic.net/g/shop/f9f7aecba30d222c2dcdb40971068030.jpeg_120x120q80.jpg_.webp" alt="BEE GEE">
+                              </div>
+                              <div class="tieude4-4-6"></div>
+                              <p class="tieude4-4-7"></p>
+                          </a>
+                      </div>
+                      <div class="tieude4-4-2">
+                          <a href="#" class="tieude4-4-3">
+                              <div class="tieude4-4-4">
+                                  <img src="https://lzd-img-global.slatic.net/g/p/7c81cf33e66ba90ab3785225c3a613be.jpg_400x400q80.jpg_.webp" alt="">
+                                   <div class="tieude4-4-9"></div> 
+                                </div>
+                              <div class="tieude4-4-5">
+                                  <img class="tieude4-4-8" src="https://lzd-img-global.slatic.net/g/shop/02fa79255bb9d81faa2780809fb4d3c0.png_120x120q80.jpg_.webp" alt="Cocoon Vietnam">
+                              </div>
+                              <div class="tieude4-4-6"></div>
+                              <p class="tieude4-4-7"></p>
+                          </a>
+                      </div>
+                </div>
+            </div>
+            <div class="tieude4-5">
+                <span class="tieude4-3-1">Danh riêng cho bạn</span>
+                <div class="tieude4-5-1">
+                    <div class="tieude4-5-2">
+                        <a href="#" class="tieude4-5-3">
+                            <div class="tieude4-5-4">
+                                <div class="tieude4-5-5">
+                                    <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/1676e9fa1097d7c94add981a1a642000.png_400x400q80.jpg_.webp" alt="TÚI ĐEO CHÉO MIDORI - VẢI CANVAS THỜI TRANG - VÀNG - HỒNG XANH NAVI - TÚI ĐEO CHÉO - TÚI TOTE - TÚI ĐEO VAI">
+                                </div>
+                                <div class="tieude4-5-6">
+                                    <div class="tieude4-5-7">
+                                        <img src="https://lzd-img-global.slatic.net/g/tps/tfs/TB1r3Rqi2zO3e4jSZFxXXaP_FXa-94-28.png" alt="">
+                                    </div>
+                                    <div class="tieude3-7-4">
+                                        <img src="https://lzd-img-global.slatic.net/g/gcp/lazada/e9453cc3-2149-480d-af30-08bf69354da0_ALL-62-18.png#width=62&height=18" alt="">
+                                    </div>
+                                    <div class="tieude3-7-5">
+                                        <span class="tieude3-7-7">129.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </div>                                    
+                                    <div class="tieude3-7-6">
+                                        <span class="tieude3-7-9">
+                                            <span class="tieude3-7-7">290.000</span>
+                                            <span class="tieude3-7-8"> ₫</span>
+                                        </span>  
+                                        <span class="tieude3-7-0">-56%</span>                                  
+                                    </div>
+                                    <div class="tieude4-5-8">
+                                        <div class="tieude4-5-8-3">
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star-half-full"></span>
+                                            <span class="fa fa-star "></span>
+                                        </div>
+                                        <div class="tieude4-5-8-1">(15)</div>
+                                        <div class="tieude4-5-8-2">Hà Nội</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tieude4-5-2">
+                        <a href="#" class="tieude4-5-3">
+                            <div class="tieude4-5-4">
+                                <div class="tieude4-5-5">
+                                    <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/5a36523f08c77125dcc34439716f0121.jpg_400x400q80.jpg_.webp" alt="điện thoại oppo neo 5 - oppo a31 chính hãng 2 sim tặng phụ kiện đầy đủ">
+                                </div>
+                                <div class="tieude4-5-6">
+                                    <div class="tieude4-5-7"></div>
+                                    <div class="tieude3-7-4">
+                                        <img src="https://lzd-img-global.slatic.net/g/gcp/lazada/e9453cc3-2149-480d-af30-08bf69354da0_ALL-62-18.png#width=62&height=18" alt="">
+                                    </div>
+                                    <div class="tieude3-7-5">
+                                        <span class="tieude3-7-7">394.930</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </div>
+                                    <div class="tieude3-7-6">
+                                        <span class="tieude3-7-9">
+                                            <span class="tieude3-7-7">840.000</span>
+                                            <span class="tieude3-7-8"> ₫</span>
+                                        </span>  
+                                        <span class="tieude3-7-0">-53%</span>                                  
+                                    </div>
+                                    <div class="tieude4-5-8">
+                                        <div class="tieude4-5-8-3">
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star-half-full"></span>
+                                            <span class="fa fa-star "></span>
+                                        </div>
+                                        <div class="tieude4-5-8-1">(235)</div>
+                                        <div class="tieude4-5-8-2">Hồ chí minh</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tieude4-5-2">
+                        <a href="#" class="tieude4-5-3">
+                            <div class="tieude4-5-4">
+                                <div class="tieude4-5-5">
+                                    <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/34d0ad7968d94b12bc938261bc2ae594.jpg_400x400q80.jpg_.webp" alt="xinyuanxuan【Free Shipping Miễn phí vận chuyển】2022 phong cách mới Xu hướng hàn quốc tất cả các trận đấu giày bình thường thoáng khí nhẹ chống trượt giày chạy bộ đế dày giày thể thao nữ">
+                                </div>
+                                <div class="tieude4-5-6">
+                                    <div class="tieude4-5-7">
+                                        <img src="https://lzd-img-global.slatic.net/g/tps/tfs/TB1r3Rqi2zO3e4jSZFxXXaP_FXa-94-28.png" alt="">
+                                    </div>
+                                    <div class="tieude3-7-4">
+                                        <img src="https://lzd-img-global.slatic.net/g/gcp/lazada/e9453cc3-2149-480d-af30-08bf69354da0_ALL-62-18.png#width=62&height=18" alt="">
+                                    </div>
+                                    <div class="tieude3-7-5">
+                                        <span class="tieude3-7-7">27.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </div>
+                                    <div class="tieude3-7-6">
+                                        <span class="tieude3-7-9">
+                                            <span class="tieude3-7-7">40.000</span>
+                                            <span class="tieude3-7-8"> ₫</span>
+                                        </span>  
+                                        <span class="tieude3-7-0">-32%</span>                                  
+                                    </div>
+                                    <div class="tieude4-5-8">
+                                        <div class="tieude4-5-8-3">
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star-half-full"></span>
+                                            <span class="fa fa-star "></span>
+                                        </div>
+                                        <div class="tieude4-5-8-1">(32)</div>
+                                        <div class="tieude4-5-8-2">Hà Nội</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tieude4-5-2">
+                        <a href="#" class="tieude4-5-3">
+                            <div class="tieude4-5-4">
+                                <div class="tieude4-5-5">
+                                    <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/bf594f76816a8619be9e033ba5ecde31.jpg_400x400q80.jpg_.webp" alt="Bình Đựng Nước 2L Dễ Thương Có Vạch Báo Giờ Uống Nước">
+                                </div>
+                                <div class="tieude4-5-6">
+                                    <div class="tieude4-5-7"></div>
+                                    <div class="tieude3-7-4"></div>
+                                    <div class="tieude3-7-5">
+                                        <span class="tieude3-7-7">15.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </div>
+                                    <div class="tieude3-7-6">
+                                        <span class="tieude3-7-9">
+                                            <span class="tieude3-7-7">30.000</span>
+                                            <span class="tieude3-7-8"> ₫</span>
+                                        </span>  
+                                        <span class="tieude3-7-0">-50%</span>                                  
+                                    </div>
+                                    <div class="tieude4-5-8">
+                                        <div class="tieude4-5-8-3">
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star-half-full"></span>
+                                            <span class="fa fa-star "></span>
+                                        </div>
+                                        <div class="tieude4-5-8-1">(82)</div>
+                                        <div class="tieude4-5-8-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tieude4-5-2">
+                        <a href="#" class="tieude4-5-3">
+                            <div class="tieude4-5-4">
+                                <div class="tieude4-5-5">
+                                    <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/8bd274bbf4fb8d2a174e90aaba2c8095.jpg_400x400q80.jpg_.webp" alt="FREE SHIP Dép bánh mì CHAO phi hành gia cực êm | Dép quai ngang nữ cute hot 2022 | Minh Thư Shoes">
+                                </div>
+                                <div class="tieude4-5-6">
+                                    <div class="tieude4-5-7"></div>
+                                    <div class="tieude3-7-4"></div>
+                                    <div class="tieude3-7-5">
+                                        <span class="tieude3-7-7">28.000</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </div>
+                                    <div class="tieude3-7-6">
+                                        <span class="tieude3-7-9">
+                                            <span class="tieude3-7-7">56.000</span>
+                                            <span class="tieude3-7-8"> ₫</span>
+                                        </span>  
+                                        <span class="tieude3-7-0">-50%</span>                                  
+                                    </div>
+                                    <div class="tieude4-5-8">
+                                         <div class="tieude4-5-8-3">
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star-half-full"></span>
+                                            <span class="fa fa-star "></span>
+                                        </div>
+                                        <div class="tieude4-5-8-1">(83)</div>
+                                        <div class="tieude4-5-8-2">Hà Nội</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tieude4-5-2">
+                        <a href="#" class="tieude4-5-3">
+                            <div class="tieude4-5-4">
+                                <div class="tieude4-5-5">
+                                    <img class="tieude3-7-2-1" src="https://lzd-img-global.slatic.net/g/p/4da1b36d862fbd3f38614e250b9ca0f5.jpg_400x400q80.jpg_.webp" alt="Set Bộ Áo Voan Kèm Áo Trong - Chất Liệu Voan Mềm - Thiết Kế Phông Trơn">
+                                </div>
+                                <div class="tieude4-5-6">
+                                    <div class="tieude4-5-7"></div>
+                                    <div class="tieude3-7-4">
+                                        <img src="https://lzd-img-global.slatic.net/g/gcp/lazada/e9453cc3-2149-480d-af30-08bf69354da0_ALL-62-18.png#width=62&height=18" alt="">
+                                    </div>
+                                    <div class="tieude3-7-5">
+                                        <span class="tieude3-7-7">6.905</span>
+                                        <span class="tieude3-7-8"> ₫</span>
+                                    </div>
+                                    <div class="tieude3-7-6">
+                                        <span class="tieude3-7-9">
+                                            <span class="tieude3-7-7">14.000</span>
+                                            <span class="tieude3-7-8"> ₫</span>
+                                        </span>  
+                                        <span class="tieude3-7-0">-50%</span>                                  
+                                    </div>
+                                    <div class="tieude4-5-8">
+                                        <div class="tieude4-5-8-3">
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star-half-full"></span>
+                                            <span class="fa fa-star "></span>
+                                        </div>
+                                        <div class="tieude4-5-8-1">(210)</div>
+                                        <div class="tieude4-5-8-2">Hồ chí minh</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tieude4-5-2">
+                        <a href="#" class="tieude4-5-3">
+                            <div class="tieude4-5-4">
+                                <div class="tieude4-5-5">
+                                    <img class="tieude3-7-2-1" src="" alt="">
+                                </div>
+                                <div class="tieude4-5-6">
+                                    <div class="tieude4-5-7"></div>
+                                    <div class="tieude3-7-4"></div>
+                                    <div class="tieude3-7-5"></div>
+                                    <div class="tieude3-7-6"></div>
+                                    <div class="tieude4-5-8">
+                                        <div class="tieude4-5-8-3">
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star checke"></span>
+                                            <span class="fa fa-star-half-full"></span>
+                                            <span class="fa fa-star "></span>
+                                        </div>
+                                        <div class="tieude4-5-8-1">(15)</div>
+                                        <div class="tieude4-5-8-2">Hà Nội</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"></script>
+    <script th:src="@{/js/index.js}"></script>
+     <script th:src="@{/js/action.js}"></script>
+     <script th:src="@{/js/search1.js}"></script>
+    
+</body>
+</html>

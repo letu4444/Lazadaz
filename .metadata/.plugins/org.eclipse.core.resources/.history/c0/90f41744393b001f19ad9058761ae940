@@ -1,0 +1,106 @@
+package Lazadar.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+
+import Lazadar.config.authori.CustomOauth2UserServer;
+import Lazadar.config.authori.OAuth2LoginSuccessHandler;
+import Lazadar.services.CustomUserDetailsService;
+
+
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity(securedEnabled = true,jsr250Enabled = true)
+public class SecurityConfig {
+
+//	@Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}")
+//	String issuerUri;
+//	
+	
+	@Bean
+	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http
+		    .csrf(Csrf -> Csrf.disable())
+			.authorizeHttpRequests(authorize ->
+				authorize
+					.requestMatchers("/trangchu/**", "/register/**","/api/**","/checkout/**","/login/**").permitAll()
+					.anyRequest().authenticated()
+			)
+			.formLogin(formLogin -> formLogin.loginPage("/login")
+			          .loginProcessingUrl("/login/check")
+//			          .successHandler(succsessHandler)
+			          .permitAll())
+			.oauth2Login(Login -> Login
+					.loginPage("/login")
+					.userInfoEndpoint(userInfo -> userInfo
+//					        .userAuthoritiesMapper(this.userAuthoritiesMapper())
+//					        .userService(this.oauth2UserService())
+					        .oidcUserService(this.customOauth2UserServer)
+					    )
+//					.successHandler(succsessHandler)
+					)
+			
+			     
+                
+			.logout(logout ->
+				logout.logoutSuccessUrl("/trangchu").permitAll()
+				.invalidateHttpSession(true))
+		    .sessionManagement(sessionManage ->
+             sessionManage.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
+            .authenticationProvider(daoAuthenticationProvider());
+		return http.build();
+	}
+
+	@Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+		return configuration.getAuthenticationManager();
+	}
+	
+	@Bean
+	WebSecurityCustomizer webSecurityCustomizer() {
+		return (web) -> web.debug(false).ignoring().requestMatchers( "/images/**", "/css/**",
+				"/favicon.ico","/js/**");
+	}
+
+	@Autowired
+	private PasswordConfig passwordConfig;
+	
+	@Autowired
+	private CustomUserDetailsService userDetailsService;
+
+	@Bean
+	public DaoAuthenticationProvider daoAuthenticationProvider() {
+		DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
+		auth.setUserDetailsService(userDetailsService);
+		auth.setPasswordEncoder(passwordConfig.passwordEncoder());
+		return auth;
+	}
+
+//	 @Bean
+//	 public SavedRequestAwareAuthenticationSuccessHandler savedRequestAwareAuthenticationSuccessHandler() {
+//	        SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
+//	        successHandler.setDefaultTargetUrl("http://localhost:8484/trangchu"); // URL mặc định nếu không có yêu cầu ban đầu được lưu
+//	        return successHandler;
+//	    }
+	   @Autowired
+	   private CustomOauth2UserServer customOauth2UserServer;
+
+	@Autowired
+	private OAuth2LoginSuccessHandler succsessHandler;
+}

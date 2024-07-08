@@ -1,0 +1,50 @@
+server:
+  port: 8484
+
+spring:
+  application:
+    name: lazadar-server
+    
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: 4444
+    url: jdbc:sqlserver://localhost:1433;databaseName=springcloud
+    username: sa
+  jpa:
+    hibernate:
+#    create
+      ddl-auto: none
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+  security:
+    user:
+      name: anhtu
+      password: 4444
+      
+    oauth2:
+      client:
+        registration:
+#          gateway:
+#          //Tên spring này phải giống với provider ở dưới kia
+#            provider: spring
+#            client-id: gateway-client-id
+#            client-secret: secret
+#            scope: openid, profile, user.read,user.write
+#            authorization-grant-type: authorization_code
+#            client-authentication-method: client_secret_basic
+#            redirect-uri: http://localhost:8082/login/oauth2/code/gateway
+#            client-name: gateway
+          google:
+            client-id: //dien dia chi id trong gg
+            client-secret: //dien client-secret trong gg
+#        provider:
+#          spring:
+#            issuer-uri: http://localhost:9000

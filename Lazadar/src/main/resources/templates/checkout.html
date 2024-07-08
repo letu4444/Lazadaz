@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org",
+       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/user.css}">
+   <link rel="stylesheet" th:href="@{/css/checkout.css}">
+    <!-- <script src="https://kit.fontawesome.com/17cfc9faeb.js" crossorigin="anonymous"></script>  -->   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+</head>
+<body>
+       <div class="tieude">
+        <div class="tieude1">
+            <div th:replace="header/header :: header1"></div>
+            
+             <div class="tieude1-3">
+                <div class="tieude1-7">
+                    <div class="tieude1-4">
+                        <a href="#" class="tieude1-4-1">
+                            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1T7K2d8Cw3KVjSZFuXXcAOpXa.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="checkout">
+            <div class="root">
+                <div class="container">
+                    <div class="checkout1">
+                        <div class="v2-checkout-address">
+                            <div class="v2-title-wrapper">
+                                <p class="v2-address-hat">Địa chỉ giao hàng</p>
+                                <a href="###" class="v2-title-wrapper-edit">Chỉnh sửa</a>
+                            </div>
+                            <div class="v2-checkout-address-inner" data-spm-anchor-id="a2o42.shipping.0.i1.6b2a5d0aM9mo1a">
+                               <!--  <th:block th:if="${addre.id != null}">
+                                <div>
+                                    <div class="v2-address-title-container">
+                                        <span class="v2-address-title" th:text="${addre.name}">Tuấn</span>
+                                        <span class="v2-mobile" th:text="${addre.iphone}">0876543553</span>
+                                    </div> 
+                                </div>
+                                <div class="v2-address-info-item">
+                                    <span th:text="'Xã '+${addre.xa} +',Huyện '+${addre.huyen}+',Tỉnh '+${addre.tinh}">Bắc phú sóc sơn hà nội, Xã Bắc Phú, Huyện Sóc Sơn, Hà Nội</span>
+                                </div> 
+                               </th:block>
+                                <div th:unless="${addre.id == null}" class="v2-checkout-address-cp">
+
+                                    <form class="update_user">
+                                        <div class="update1">
+                                            <div class="mod-address-form-left">
+                                                <div class="mod-input-name">
+                                                    <label >Full Name</label>
+                                                    <input type="text" value="" placeholder="Nhập tên">
+                                                    <span class="error"></span>
+                                                    <div class="mod-input-close-icon"></div>
+                                                </div>
+                                                <div class="mod-input-name">
+                                                    <label >Phone Number</label>
+                                                    <input type="tel" value="" placeholder="Nhập sdt">
+                                                    <span class="error"></span>
+                                                    <div class="mod-input-close-icon"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mod-address-form-right">
+                                                <div class="mod-input-name">
+                                                    <label >Tỉnh</label>
+                                                    <input type="text" value="" placeholder="Nhập tỉnh">
+                                                    <span class="error"></span>
+                                                    <div class="mod-input-close-icon"></div>
+                                                </div>
+                                                <div class="mod-input-name">
+                                                    <label >Huyện</label>
+                                                    <input type="text" value="" placeholder="Nhập huyện">
+                                                    <span class="error"></span>
+                                                    <div class="mod-input-close-icon"></div>
+                                                </div>
+                                                <div class="mod-input-name">
+                                                    <label >Xã</label>
+                                                    <input type="text" value="" placeholder="Nhập xã">
+                                                    <span class="error"></span>
+                                                    <div class="mod-input-close-icon"></div>
+                                                </div>
+                                                <div class="mod-address-tag">
+                                                    <p class="mod-address-tag-title">Select a label for effective delivery:</p>
+                                                    <div class="mod-address-tag-content">
+                                                        <div class="mod-address-tag-item mod-address-tag-work ">
+                                                            <span class="mod-address-tag-icon select-tag-work"></span>
+                                                            <span>OFFICE</span>
+                                                        </div>
+                                                        <div class="mod-address-tag-item mod-address-tag-home ">
+                                                            <span class="mod-address-tag-icon select-tag-home"></span>
+                                                            <span>HOME</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mod-address-form-action">
+                                                
+                                                <button tabindex="7" type="button" class="next-btn next-btn-primary next-btn-large mod-address-form-btn-save">Lưu</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                
+                                </div> -->
+                            </div>
+                        </div>
+                    <!--      
+                         <div class="package" th:each="sp,SPindex : ${listorder}">
+                            <div class="package-title">
+                                <div class="package-title-left">
+                                   <span class="package-title-name" th:text="'Gói hàng '+ ${SPindex.index}+' của ' +${SPindex.index}">Gói hàng 1 của 1</span>
+                                </div>
+                                <div class="package-title-right">
+                                    <span class="package-title-tips">Được giao bởi</span>
+                                    <span class="package-title-brand" th:text="${sp.key}">ĐỨC ANH COMPUTER - LINH KIỆN VI TÍNH SỈ</span>
+                                </div>
+                                
+                            </div>
+                            <div class="package-giaohang">
+                                <div class="package-giaohang1">
+                                    <div class="package-giaohang1-1">
+                                        <div class="package-giaohang1-2">
+                                            Tùy chọn giao hàng
+                                        </div>
+                                    </div>
+                                    <div class="package-giaohang1-3">
+                                        <div class="package-giaohang1-4">
+                                            <div class="package-giaohang1-5">
+                                                <div class="package-giaohang1-5-1">
+                                                    <span class="selected-icon">
+                                                        <i class="fa-solid fa-circle-check"></i>
+                                                    </span>
+                                                    <div class="package-giaohang1-5-2">
+                                                        <span class="package-giaohang1-5-3">₫ 37,300</span>
+                                                    </div>
+                                                </div>
+                                                <p class="delivery-item-name-wrap"><span class="delivery-item-name">Giao hàng tiêu chuẩn</span></p>
+                                                <div class="package-giaohang1-6">
+                                                    <p class="package-giaohang1-6-1">Nhận trước ngày 13-15 tháng 4</p>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="package-sp" th:each="product : ${sp.value}" data-order="1">
+                                <div class="package-sp1">
+                                    <div class="package-sp1-1">
+                                        <div class="package-sp1-2">
+                                            <div class="package-sp1-2-1">
+                                                <img th:src="${product.image}" alt="">
+                                            </div>
+                                            <div class="package-sp-1-2-2">
+                                                <a href="#" class="package-sp-1-2-3" th:text="${product.image}">
+                                                    Chuột Không Dây Logitech M220 Không Tiếng Động- Có Công Tắc On/Off - Độ Nhạy Cao - Hàng Nhập Khẩu , Tặng Pin
+                                                </a>
+                                                <a href="#" class="package-sp-1-2-4" th:text="${product.image}">Đen</a>
+                                            </div>
+                                        </div>
+                                        <div class="package-sp1-3">
+                                            <div class="package-sp1-3-1" th:text="${product.image}">₫ 55,000</div>
+                                            <div class="package-sp1-3-2" th:text="${product.image}">₫ 80,000</div>
+                                            <div class="package-sp1-3-3">30%</div>
+                                            <div class="package-sp1-3-4">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </div>
+                                        </div>
+                                        <div class="package-sp1-4">
+                                            <span class="package-sp1-4-1">SL:</span>
+                                            <span class="package-sp1-4-2" th:text="${product.image}">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="width: 100%; height: 1px; background-color: rgb(218, 218, 218);"></div>
+                            </div>
+                          
+                        </div> -->
+                    </div>
+                     <div class="thanhtoan">
+                        <div class="payment-card-container">
+                            <div class="payment-card-header-wrapper">
+                                <span class="payment-card-header-title">Chọn phương thức thanh toán</span>
+                                <span class="payment-card-header-action">Xem tất cả ></span>
+                            </div>
+                            <div class="card-list-wrapper">
+                                <div class="card-container selected"> 
+                                    <div>
+                                        <span class="lazada lazada-ic-sucess lazada-icon checked-icon checked"></span>
+                                        <div class="card-main-content">
+                                            <img class="card-icon" src="https://img.lazcdn.com/g/tps/tfs/TB1Iey_osKfxu4jSZPfXXb3dXXa-96-96.png_2200x2200q75.png_.webp">
+                                            <div class="card-main-content-text-container">
+                                                <p class="card-title" title="viza">Thẻ tín dụng/Thẻ ghi nợ</p>
+                                            </div></div><div class="card-footer">
+                                                <div class="card-footer-left">
+                                                    <div class="card-complex-description-wrapper">
+                                                        <p class="card-complex-description-head-text">Chọn để thêm thẻ</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer-right">
+                                                    <img src="https://img.lazcdn.com/g/tps/tfs/TB1sH7_bxrI8KJjy0FpXXb5hVXa-80-80.png_2200x2200q75.png_.webp">
+                                                    <img src="https://img.lazcdn.com/g/tps/tfs/TB1JmMulOqAXuNjy1XdXXaYcVXa-80-80.png_2200x2200q75.png_.webp">
+                                                    <img src="https://img.lazcdn.com/g/tps/tfs/TB1RI0cbLDH8KJjy1XcXXcpdXXa-80-80.png_2200x2200q75.png_.webp">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-container">
+                                        <div>
+                                            <span class="lazada lazada-__btn-check-unselect lazada-icon checked-icon"></span>
+                                            <div class="card-main-content">
+                                                <img class="card-icon" src="https://stcd02206177151.cloud.edgevnpay.vn/assets/images/logo-icon/logo-primary.svg">
+                                                <div class="card-main-content-text-container">
+                                                    <p class="card-title" title="momo">Vnpay</p>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="card-footer-left">
+                                                    <div class="card-complex-description-wrapper">
+                                                        <p class="card-complex-description-head-text">Kết nối với VnPay</p>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                  </div>
+                             </div>
+                             <div class="voucher-input">
+                                <p class="voucher-title">Mã giảm giá</p>
+                                <div class="voucher-input-inner">
+                                    <div class="voucher-input-col">
+                                        <span class="next-input next-input-single next-input-medium clear voucher-input-control">
+                                            <input type="text" id="automation-voucher-input" placeholder="Enter Voucher Code" value="" height="100%">
+                                        </span>
+                                    </div>
+                                    <div class="voucher-input-col">
+                                        <button id="automation-voucher-input-button" type="button" class="next-btn next-btn-normal next-btn-large voucher-input-button">Áp dụng</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-card-header-wrapper _a1">
+                                <span class="payment-card-header-title">Hóa đơn và thông tin liên hệ</span>
+                                <span class="payment-card-header-action">Edit</span>
+                            </div>
+                            <div class="thanhtoan1">
+                                <div class="thanhtoan1-1">
+                                    <span class="thanhtoan1-1-2">Thông tin đơn hàng</span>
+                                </div>
+                                <div class="thanhtoan1-2">
+                                    <div class="thanhtoan1-2-1">
+                                        <div class="thanhtoan1-2-2">
+                                            <span class="thanhtoan1-2-3 tong">Tạm tính (1 Sản phẩm)</span>
+                                            <span class="thanhtoan1-2-4">đ 230,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="thanhtoan1-2-1">
+                                        <div class="thanhtoan1-2-2">
+                                            <span class="thanhtoan1-2-3">Phí vận chuyển</span>
+                                            <span class="thanhtoan1-2-4-1">đ 76,400</span>
+                                       </div>
+                                    </div>
+                                    <div class="thanhtoan1-2-1">
+                                        <div class="thanhtoan1-2-2">
+                                            <span class="thanhtoan1-2-3">Giảm phí vận chuyển ></span>
+                                            <span class="thanhtoan1-2-4-coins">-đ 4,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tongthanhtoan">
+                                <div class="thanhtoan1-2-1">
+                                    <div class="thanhtoan1-2-2">
+                                        <span class="tongthanhtoan1-3">Tổng cộng:</span>
+                                        <span class="tongthanhtoan1-2">đ 230,000</span>
+                                    </div>
+                                </div>
+                                <button class="tongthanhtoan1">Tiến hành thanh toán</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" class="id_sp" th:data-id="${listorder}">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script th:src="@{/js/checkout.js}"></script>
+<script th:src="@{/js/user1.js}"></script>
+<!-- <script th:src="@{/js/action1.js}"></script> -->
+
+</body>
+</html>

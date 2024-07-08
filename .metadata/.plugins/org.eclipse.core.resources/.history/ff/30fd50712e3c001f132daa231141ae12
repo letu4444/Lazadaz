@@ -1,0 +1,5 @@
+package Lazadar.security;
+
+public class CustomAccessDeniedHandler {
+
+}
