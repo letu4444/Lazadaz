@@ -27,7 +27,7 @@ import Lazadar.services.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
-
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
 	@Bean
@@ -35,7 +35,7 @@ public class SecurityConfig {
 		http.csrf(Csrf -> Csrf.disable())
 
 				.authorizeHttpRequests(authorize -> authorize
-						.requestMatchers("/trangchu/**", "/register/**", "/api/search/**", "/checkout/**", "/login/**")
+						.requestMatchers("/trangchu/**", "/register/**", "/api/**", "/checkout/**", "/login/**")
 						.permitAll().anyRequest().authenticated())
 				.formLogin(formLogin -> formLogin.loginPage("/login")
 

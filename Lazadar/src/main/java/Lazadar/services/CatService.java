@@ -51,12 +51,14 @@ public class CatService {
 				             .userId(credenRepository.findOneById(dto.getUserid()))
 				             .build();
 		//kiểm tra xem cùng tên cùng phân loại không để cập nhật số lượng thôi
-//		String phanloai = "%"+dto.getPhanloai()+"%";
-//		String name = "%"+dto.getName()+"%";
-//		Cat test = catRoepository.findByPhanloaiandName(name, phanloai);
-//		if(test != null) {
-//			cat = test;
-//		}
+		String phanloai = dto.getPhanloai();
+		String name = dto.getName();
+		Cat test = catRoepository.findByPhanLoaiandName(name,phanloai);
+		
+		if(test != null) {
+			cat.setId(test.getId());
+			cat.setSoluong(dto.getSl() + test.getSoluong());
+		}
 		//CheckOut để thanh toán tiền 
 //		checkoutDto checkoutdto = checkoutDto.builder()
 //				                  .image(orderline.getImage())
@@ -138,5 +140,6 @@ public class CatService {
 		catRoepository.deleteById(id);
 		
 	}
+	
 	
 }

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Lazadar.dto.ProductsDto;
+import Lazadar.model.Cat;
 import Lazadar.model.Products;
 import Lazadar.model.UserCredential;
 import Lazadar.repository.ImagephuRepository;
@@ -159,5 +160,7 @@ public class TrangchuController {
 	public String AdddresPage() {
 		return "addres";
 	}
+	
+
 
 }

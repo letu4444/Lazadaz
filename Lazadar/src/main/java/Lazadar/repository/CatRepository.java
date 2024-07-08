@@ -21,10 +21,10 @@ public interface CatRepository extends JpaRepository<Cat, Long>{
 	List<Cat> findByUserId(Long userId);
 	
 	Cat findOneById(Long id);
-	//Lấy xem phân loại đó có trong sql chưa
-//	@Modifying
-//	@Query(value = "SELECT * FROM cat u where u.name like N?1 and u.phanloai LIKE N?2",nativeQuery = true)
-//	Cat findByPhanloaiandName(String name, String phanloai); 
+	//Lấy xem phân loại đó có trong sql chưa  AND u.phanloai LIKE %?2%
+
+	@Query(value = "SELECT * FROM cat u WHERE u.name=?1 and u.phanloai=?2",nativeQuery = true)
+	Cat findByPhanLoaiandName(String name,String phanloai); 
 	/*
 	 * @Query(value =
 	 * "SELECT soluong FROM ordersanpham u where u.user_id=?1",nativeQuery = true)
